@@ -1,0 +1,43 @@
+import { SchoolType, EducationLevel } from "@prisma/client";
+
+export const MOCK_SCHOOLS = [
+  {
+    id: "1",
+    name: "Colegiul Național 'Sfântul Sava'",
+    type: SchoolType.PUBLIC,
+    levels: [EducationLevel.HIGH_SCHOOL],
+    sector: 1,
+    address: "Strada General Berthelot 23",
+    latitude: 44.4414,
+    longitude: 26.0917,
+    avgEvalNationala: 9.85,
+    amenities: ["Library", "Sports Hall", "Science Labs"],
+    nearMetro: true,
+  },
+  {
+    id: "2",
+    name: "Școala Gimnazială Nr. 195 (Hamburg)",
+    type: SchoolType.PUBLIC,
+    levels: [EducationLevel.PRIMARY, EducationLevel.MIDDLE],
+    sector: 3,
+    address: "Strada Lunca Bradului 2",
+    latitude: 44.4225,
+    longitude: 26.1628,
+    avgEvalNationala: 9.20,
+    amenities: ["Canteen", "Modern Classrooms", "After-school"],
+    nearMetro: true,
+  },
+  {
+    id: "3",
+    name: "International School of Bucharest",
+    type: SchoolType.INTERNATIONAL,
+    levels: [EducationLevel.KINDERGARTEN, EducationLevel.PRIMARY, EducationLevel.MIDDLE, EducationLevel.HIGH_SCHOOL],
+    sector: 4,
+    address: "Șoseaua Gara Cățelu 1R",
+    latitude: 44.4147,
+    longitude: 26.1839,
+    avgEvalNationala: null,
+    amenities: ["Swimming Pool", "International Curriculum", "Campus"],
+    nearMetro: false,
+  },
+];

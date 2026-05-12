@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum SchoolType {
+  PUBLIC
+  PRIVATE
+  INTERNATIONAL
+}
+
+enum EducationLevel {
+  KINDERGARTEN
+  PRIMARY
+  MIDDLE
+  HIGH_SCHOOL
+}
+
+model School {
+  id                String           @id @default(uuid())
+  name              String
+  type              SchoolType
+  levels            EducationLevel[]
+  sector            Int              // 1-6
+  address           String
+  latitude          Float?
+  longitude         Float?
+  website           String?
+  phone             String?
+  email             String?
+  description       String?          @db.Text
+  amenities         String[]         // e.g., ["Canteen", "After-school"]
+  
+  // Bucharest Specifics
+  circumscription   String?          // Assigned district for public schools
+  nearMetro         Boolean          @default(false)
+
+  // Metrics (Latest year)
+  avgEvalNationala  Decimal?         @db.Decimal(4, 2)
+  passingRateBac    Decimal?         @db.Decimal(5, 2)
+  aracipRating      String?          // e.g., "Excellent", "Good"
+
+  reviews           Review[]
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+}
+
+model Review {
+  id              String   @id @default(uuid())
+  schoolId        String
+  school          School   @relation(fields: [schoolId], references: [id])
+  userId          String
+  rating          Int      // 1-5
+  comment         String   @db.Text
+  isVerifiedParent Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model User {
+  id    String @id @default(uuid())
+  email String @unique
+  name  String?
+  role  String @default("PARENT") // PARENT, ADMIN
+}
