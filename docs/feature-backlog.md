@@ -4,8 +4,7 @@ This backlog tracks the automated development of the application. The "Architect
 
 ## 📋 Queue (To be implemented)
 
-1.  **Functional Sector Filtering**: Update the `/schools` page to use URL search parameters to filter the school list by Sector (1-6) using Prisma.
-2.  **School Type & Level Filters**: Add functional filtering for School Type (Public/Private/International) and Education Level (Kindergarten/Primary/etc.).
+1.  **School Type & Level Filters**: Add functional filtering for School Type (Public/Private/International) and Education Level (Kindergarten/Primary/etc.).
 3.  **Dynamic School Detail Pages**: Implement `/schools/[id]` routes that fetch and display full school details, including amenities and performance metrics.
 4.  **Interactive Map with Leaflet**: Add an interactive map at `/map` that clusters school markers and links to their detail pages.
 5.  **Parent Review Submission**: Create a protected form on the school detail page for authenticated parents to submit ratings and comments.
