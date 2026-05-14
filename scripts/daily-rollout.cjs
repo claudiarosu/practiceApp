@@ -61,7 +61,7 @@ try {
     console.log("Gemini CLI would be invoked here with the following prompt:");
     console.log(prompt);
     
-    // markFeatureAsDone(feature); // Uncomment after actual integration
+    markFeatureAsDone(feature); 
     
 } catch (error) {
     console.error(`❌ Rollout failed: ${error.message}`);

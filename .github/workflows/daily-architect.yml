@@ -5,6 +5,10 @@ on:
     - cron: '0 9 * * *' # 9:00 AM daily
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   rollout:
     runs-on: ubuntu-latest
