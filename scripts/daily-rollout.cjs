@@ -58,8 +58,13 @@ try {
     // gemini "${prompt}"
     // For now, we simulate the logic of moving the backlog
     
-    console.log("Gemini CLI would be invoked here with the following prompt:");
-    console.log(prompt);
+    console.log("🚀 Invoking Gemini CLI to implement the feature...");
+    
+    // Execute the Gemini CLI
+    // We pass the prompt to the gemini command
+    execSync(`gemini "${prompt.replace(/"/g, '\\"')}"`, { stdio: 'inherit' });
+    
+    console.log("✅ Feature implementation complete.");
     
     markFeatureAsDone(feature); 
     
