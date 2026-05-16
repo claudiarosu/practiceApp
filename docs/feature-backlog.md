@@ -4,7 +4,6 @@ This backlog tracks the automated development of the application. The "Architect
 
 ## 📋 Queue (To be implemented)
 
-1.  **School Type & Level Filters**: Add functional filtering for School Type (Public/Private/International) and Education Level (Kindergarten/Primary/etc.).
 3.  **Dynamic School Detail Pages**: Implement `/schools/[id]` routes that fetch and display full school details, including amenities and performance metrics.
 4.  **Interactive Map with Leaflet**: Add an interactive map at `/map` that clusters school markers and links to their detail pages.
 5.  **Parent Review Submission**: Create a protected form on the school detail page for authenticated parents to submit ratings and comments.
@@ -12,6 +11,7 @@ This backlog tracks the automated development of the application. The "Architect
 7.  **School Comparison Tool**: Allow users to select 2-3 schools and see a side-by-side comparison of their metrics.
 
 ## ✅ Done
+- [x] School Type & Level Filters
 
 - [x] Functional Sector Filtering (Daily Rollout Simulation)
 - [x] Next.js Project Initialization (Phase 1)
